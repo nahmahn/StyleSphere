@@ -1,6 +1,4 @@
-# StyleSphere
-<br>VTON OUTPUT LINK:-https://drive.google.com/file/d/1YvKs7Fe__dFkOpAqQRJ5YtjecSsrwOzp/view?usp=drive_link</br>
-Model Checkpoints:-https://drive.google.com/drive/folders/16TuKl3-vgtnLhyMu5OpwLPIsvL30XHrS?usp=drive_link
+
 #  StyleSphere - Your AI Fashion Universe
 
 StyleSphere is a state-of-the-art multimodal AI-powered fashion assistant and virtual try-on engine. It blends cutting-edge computer vision, natural language understanding, and retrieval-augmented generation to redefine the fashion shopping and customization experience.
@@ -10,6 +8,8 @@ StyleSphere is a state-of-the-art multimodal AI-powered fashion assistant and vi
 ##  Core Modules Overview
 
 ### 1.  Virtual Try-On Engine (HR-VITON + CBAM)
+<br>VTON OUTPUT LINK:-https://drive.google.com/file/d/1YvKs7Fe__dFkOpAqQRJ5YtjecSsrwOzp/view?usp=drive_link</br>
+Model Checkpoints:-https://drive.google.com/drive/folders/16TuKl3-vgtnLhyMu5OpwLPIsvL30XHrS?usp=drive_link
 - **Core Model**: HR-VITON for realistic try-on at 1024×768 resolution.
 - **Architecture**: 
   - GMM (Geometric Matching Module) for cloth warping.
@@ -60,7 +60,7 @@ StyleSphere is a state-of-the-art multimodal AI-powered fashion assistant and vi
   - Losses: L1 + SSIM + LPIPS + Feature Matching.
 - **Output**: Standalone product image.
 - **Limitations**: Struggles with small prints/logos.
-
+https://drive.google.com/drive/folders/1EtKPcDtMyzW-RDJz3ceCtb9TRU9xX6kz
 ---
 
 ### 6.  StyleRAG - Multimodal Fashion Assistant
@@ -114,3 +114,7 @@ StyleSphere is a state-of-the-art multimodal AI-powered fashion assistant and vi
 
 ---
 
+##Contributors
+- nahmahn Naman Jain
+- ghostiee-11 Aman Kumar
+- Prisha8 Prisha Gulati
