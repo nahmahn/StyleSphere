@@ -7,6 +7,7 @@ StyleSphere is a state-of-the-art multimodal AI-powered fashion assistant and vi
 ## Demo 
 - https://youtu.be/Cubr62y-uS4
 - https://youtu.be/0bOf6Q3-YWw
+- https://youtu.be/YSYfn65IlIo
   
 ##  Core Modules Overview
 
