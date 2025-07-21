@@ -114,7 +114,7 @@ https://drive.google.com/drive/folders/1EtKPcDtMyzW-RDJz3ceCtb9TRU9xX6kz
 
 ---
 
-##Contributors
+### Contributors
 - nahmahn Naman Jain
 - ghostiee-11 Aman Kumar
 - Prisha8 Prisha Gulati
