@@ -60,7 +60,7 @@ Model Checkpoints:-https://drive.google.com/drive/folders/16TuKl3-vgtnLhyMu5OpwL
   - Losses: L1 + SSIM + LPIPS + Feature Matching.
 - **Output**: Standalone product image.
 - **Limitations**: Struggles with small prints/logos.
-https://drive.google.com/drive/folders/1EtKPcDtMyzW-RDJz3ceCtb9TRU9xX6kz
+<br>https://drive.google.com/drive/folders/1EtKPcDtMyzW-RDJz3ceCtb9TRU9xX6kz<br>
 ---
 
 ### 6.  StyleRAG - Multimodal Fashion Assistant
