@@ -1,0 +1,14 @@
+torch>=1.8.2
+torchvision
+opencv-python
+torchgeometry
+Pillow
+tqdm
+tensorboardX
+scikit-image
+scipy
+numpy
+matplotlib
+
+# Optional for fp16 support
+# apex 
