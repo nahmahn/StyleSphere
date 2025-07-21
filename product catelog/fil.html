@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleSphere Pro</title>
+    <!-- Links to your specific filenames -->
+    <link rel="stylesheet" href="fil.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div class="shop-layout">
+        <aside class="sidebar">
+            <h1 class="logo">StyleSphere</h1>
+            <div class="filter-section">
+                <h2>Filters</h2>
+                <div class="filter-group">
+                    <h3>Category</h3>
+                    <div id="category-filters" class="filter-options"></div>
+                </div>
+                <div class="filter-group">
+                    <h3>Popular Tags</h3>
+                    <div id="tags-filters" class="filter-options"></div>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <input type="search" id="search-bar" placeholder="Describe a style, color, or brand...">
+                <div class="results-count">Showing <span id="product-count">0</span> products</div>
+            </header>
+            <div id="product-grid" class="product-grid"><div class="loader"></div></div>
+        </main>
+    </div>
+    <!-- Links to your specific filenames -->
+    <script src="fil.js"></script>
+</body>
+</html>
