@@ -1,0 +1,30 @@
+:root { --primary-color: #1a1a1a; --accent-color: #4f46e5; --text-color: #ffffff; }
+body { font-family: 'Inter', sans-serif; background-color: var(--primary-color); color: var(--text-color); margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+.chat-container { width: 100%; max-width: 800px; height: 90vh; background-color: #111; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: flex; flex-direction: column; overflow: hidden; }
+.chat-header { padding: 20px; background-color: #181818; border-bottom: 1px solid #2a2a2a; text-align: center; }
+.chat-header h1 { margin: 0; font-weight: 700; }
+.chat-header h1 span { color: var(--accent-color); font-weight: 500; }
+.chat-window { flex-grow: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; }
+.chat-bubble { max-width: 75%; padding: 12px 18px; border-radius: 18px; line-height: 1.6; }
+.user { background-color: var(--accent-color); align-self: flex-end; border-bottom-right-radius: 4px; }
+.ai { background-color: #222; color: #e0e0e0; align-self: flex-start; border-bottom-left-radius: 4px; }
+.chat-input-area { display: flex; align-items: center; padding: 20px; border-top: 1px solid #2a2a2a; }
+#message-input { flex-grow: 1; padding: 12px 15px; border-radius: 25px; border: 1px solid #333; background-color: #2a2a2a; color: var(--text-color); font-size: 16px; }
+#message-input:focus { outline: none; border-color: var(--accent-color); }
+.chat-input-area button { margin-left: 10px; padding: 12px 20px; border: none; background-color: var(--accent-color); color: white; border-radius: 25px; cursor: pointer; transition: background-color 0.2s; }
+.chat-input-area button:hover { background-color: #3c34b8; }
+.items-container { display: flex; gap: 15px; overflow-x: auto; padding: 15px 0 5px 0; margin-top: 10px; }
+.product-card { border: 1px solid #333; border-radius: 12px; width: 160px; flex-shrink: 0; background-color: #2c2c2c; overflow: hidden; }
+.product-card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.card-content { padding: 10px; }
+.card-title { font-weight: 500; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 5px; }
+.tag { background-color: #444; color: #ccc; padding: 2px 8px; border-radius: 10px; font-size: 11px; margin: 2px; display: inline-block; }
+.file-input-label { padding: 8px 12px; cursor: pointer; color: #888; }
+.file-input-label:hover { color: #fff; }
+.image-preview-container { padding: 10px 20px; background-color: #181818; display: flex; align-items: center; gap: 10px; }
+#image-preview { max-height: 60px; border-radius: 4px; border: 1px solid #444; }
+#remove-image-btn { background: #333; color: white; border: none; width: 24px; height: 24px; border-radius: 50%; cursor: pointer; font-size: 16px; text-align: center; }
+.loading-indicator { display: flex; justify-content: center; padding: 10px; }
+.loading-indicator .dot { width: 8px; height: 8px; margin: 0 4px; background-color: var(--accent-color); border-radius: 50%; animation: bounce 1.4s infinite ease-in-out both; }
+.loading-indicator .dot:nth-child(1) { animation-delay: -0.32s; } .loading-indicator .dot:nth-child(2) { animation-delay: -0.16s; }
+@keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1.0); } }

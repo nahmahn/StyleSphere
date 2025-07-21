@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleSphere - Your AI Fashion Universe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navbar Styles */
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #1e293b;
+            text-decoration: none;
+        }
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .nav-link {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #667eea;
+        }
+        .nav-button {
+            padding: 10px 22px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+            padding-top: 80px; /* To offset the fixed navbar */
+        }
+        .hero::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="g" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23g)"/></svg>');
+            opacity: 0.3;
+        }
+        .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%; position: relative; z-index: 2; }
+        .hero-text h1 { font-size: 4rem; font-weight: 800; margin-bottom: 20px; color: white; text-shadow: 0 4px 20px rgba(0,0,0,0.3); line-height: 1.1; }
+        .hero-text p { font-size: 1.25rem; color: rgba(255,255,255,0.9); margin-bottom: 40px; font-weight: 400; }
+        .cta-button {
+            display: inline-block; padding: 18px 36px;
+            background: white; color: #764ba2;
+            text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.1rem;
+            transition: all 0.4s ease; box-shadow: 0 8px 30px rgba(0,0,0, 0.2);
+        }
+        .cta-button:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 15px 40px rgba(0,0,0, 0.3); }
+        .hero-visual {
+            position: relative;
+            height: 650px; /* increased from 500px */
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 30px;
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+        
+        .hero-visual img { width: 100%; height: 105%; object-fit: cover; opacity: 0.9; }
+
+        /* Section Styles */
+        .section { padding: 100px 0; }
+        .section-title { text-align: center; font-size: 2.8rem; font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .section-subtitle { text-align: center; font-size: 1.2rem; color: #64748b; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        /* Features Grid */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 60px; }
+        .feature-card {
+            background: white; padding: 40px 30px; border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.4s ease;
+            border-top: 5px solid #667eea;
+        }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
+        .feature-icon {
+            font-size: 2.2rem; color: #667eea; margin-bottom: 25px;
+            width: 70px; height: 70px; background: #f0f5ff;
+            border-radius: 20px; display: flex; align-items: center; justify-content: center;
+        }
+        .feature-card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 15px; color: #1e293b; }
+        .feature-card p { color: #64748b; font-size: 1rem; line-height: 1.6; }
+
+        /* Footer */
+        .footer { background: #1e293b; padding: 60px 0 30px; text-align: center; color: rgba(255,255,255,0.7); }
+        .footer-content h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 30px; color: white; }
+        .footer-links { margin-top: 40px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-link { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; }
+        .footer-link:hover { color: white; }
+
+        .feature-card p {
+            color: #64748b;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 25px; /* Add margin to create space for the button */
+        }
+        
+        /* NEW: Styles for the button inside the feature card */
+        .feature-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f0f5ff;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .feature-button:hover {
+            background-color: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        @media (max-width: 992px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-text h1 { font-size: 3rem; }
+            .hero-visual { 
+                margin-top: 40px; 
+                height: 500px; /* increased from 400px */
+            }
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="nav-logo">StyleSphere</a>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="http://127.0.0.1:5001" target="_blank" class="nav-link nav-button">Launch App</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-right">
+                    <h1>Welcome to StyleSphere</h1>
+                    <p>Your complete AI fashion universe. Discover, create, and visualize styles like never before with our cutting-edge toolkit.</p>
+                    <a href="http://127.0.0.1:5001" target="_blank" class="cta-button">Launch Product Catalog</a>
+                </div>
+                <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
+                    <img src="img1.jpg" alt="AI Fashion Visualization">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">An Integrated Fashion Platform</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">StyleSphere combines multiple powerful AI tools into a single, seamless experience. Explore the core features that set us apart.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon"><i class="fas fa-vr-cardboard"></i></div>
+                    <h3>Virtual Try-On</h3>
+                    <p>See how it looks before you decide. Our high-fidelity VTON engine lets you visualize any clothing item on a model, bringing your selections to life.</p>
+                    <a href="http://localhost:8501/" class="feature-button">Open Virtual-Try-On</a>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon"><i class="fas fa-comments"></i></div>
+                    <h3>Style-RAG Chatbot</h3>
+                    <p>Converse with an expert AI stylist. Use natural language and even images to get intelligent, context-aware recommendations and style advice.</p>
+                    
+                    <a href="index.html" class="feature-button">Open Chatbot</a>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon"><i class="fas fa-store"></i></div>
+                    <h3>Product Catalog & Search</h3>
+                    <p>Explore a vast catalog of fashion items with powerful, AI-driven search and filtering. Find exactly what you're looking for by style, color, brand, and more.</p>
+                    <a href="http://127.0.0.1:5001" class="feature-button">Open catelog</a>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon"><i class="fas fa-crop-alt"></i></div>
+                    <h3>AI Cloth Extractor</h3>
+                    <p>Powered by advanced vision models, our backend can automatically identify and extract clothing attributes from any image, creating a rich, searchable database.</p>
+                    <a href="#" class="feature-button">Open cloth-extractor</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h2 data-aos="fade-up">Explore the Future of Fashion</h2>
+                <a href="http://127.0.0.1:5001" target="_blank" class="cta-button" data-aos="fade-up" data-aos-delay="200">Launch App</a>
+                <div class="footer-links" data-aos="fade-up" data-aos-delay="300">
+                    <a href="#" class="footer-link">Project by ❤️</a>
+                    <a href="https://github.com/nahmahn/StyleSphere" class="footer-link">GitHub Repository</a>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 50
+        });
+
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
